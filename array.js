@@ -18,7 +18,7 @@
 
 // newNames = names;
 // newNames.push("Me");
-//? names will have Me in it, 'cause newNames is a reference to names
+//? Names will have Me in it, 'cause newNames is a reference to names
 
 //! HIGH ORDER FUNCTION - A function that takes another function as a parameter
 const videos = [
@@ -80,13 +80,13 @@ const videos = [
 // console.log(shortSearch);
 
 //? Object of games title and rating
-const games = [
-  { title: "Mass Effect", rating: 9.5 },
-  { title: "League of Legends", rating: 5 },
-  { title: "Last of Us", rating: 10 },
-  { title: "God of War", rating: 10 },
-  { title: "WWE 2K20", rating: 4 },
-];
+// const games = [
+//   { title: "Mass Effect", rating: 9.5 },
+//   { title: "League of Legends", rating: 5 },
+//   { title: "Last of Us", rating: 10 },
+//   { title: "God of War", rating: 10 },
+//   { title: "WWE 2K20", rating: 4 },
+// ];
 
 //? Filter just the goodGames
 // const goodGames = games.filter(function (game) {
@@ -115,41 +115,81 @@ const games = [
 // });
 
 //! TERNARY OPERATOR - Simpler if statement
-//? condition ? true : false
-const newVideos1 = videos.map(function (video) {
-  if (video.length < 10) {
-    return video;
-  } else {
-    return "nope";
-  }
-});
-//? Same but shorter
-const newVideos2 = videos.map(function (video) {
-  return video.length < 10 ? video : "nope";
-});
+// //? condition ? true : false
+// const newVideos1 = videos.map(function (video) {
+//   if (video.length < 10) {
+//     return video;
+//   } else {
+//     return "nope";
+//   }
+// });
+// //? Same but shorter
+// const newVideos2 = videos.map(function (video) {
+//   return video.length < 10 ? video : "nope";
+// });
 
 //! ARROW FUNCTION
-//? Old way
-const newVideos3 = videos.map(function (video) {
-  return video.length < 10 ? video : "nope";
-});
-//? Arrow way
-const newVideos4 = videos.map((video) => {
-  return video.length < 10 ? video : "nope";
-});
-//? Arrow way v2 - If there is only one param
-//? we can get rid of the () - Prettier don't want!
-const newVideos5 = videos.map((video) => {
-  return video.length < 10 ? video : "nope";
-});
-//? Arrow way v3 - If there is only one line of code in the function
-//? we can get rid of the {} ans the return
-const newVideos6 = videos.map((video) => (video.length < 10 ? video : "nope"));
+// //? Old way
+// const newVideos3 = videos.map(function (video) {
+//   return video.length < 10 ? video : "nope";
+// });
+// //? Arrow way
+// const newVideos4 = videos.map((video) => {
+//   return video.length < 10 ? video : "nope";
+// });
+// //? Arrow way v2 - If there is only one param
+// //? we can get rid of the () - Prettier don't want!
+// const newVideos5 = videos.map((video) => {
+//   return video.length < 10 ? video : "nope";
+// });
+// //? Arrow way v3 - If there is only one line of code in the function
+// //? we can get rid of the {} ans the return
+// const newVideos6 = videos.map((video) => (video.length < 10 ? video : "nope"));
 
-//? One line in the function
-const upperVidoes = videos.map((video) => video.toUpperCase());
-//? Multiple lines in the function
-const upperVidoes2 = videos.map((video) => {
-  const i = 0;
-  video.toUpperCase();
-});
+// //? One line in the function
+// const upperVidoes = videos.map((video) => video.toUpperCase());
+// //? Multiple lines in the function
+// const upperVidoes2 = videos.map((video) => {
+//   const i = 0;
+//   video.toUpperCase();
+// });
+
+//! SORT FUNCTION - Will affect the original array
+// const items = ["Banana", "Orange", "Apple", "Mango"];
+// const ratings = [92, 56, 4, 2, 22, 45.6, 10, 80];
+
+// items.sort(); // Work great!
+// console.log(items); // Array(4) [ "Apple", "Banana", "Mango", "Orange" ]
+
+// ratings.sort(); // Transfer number to string so
+// console.log(ratings); // Array(8)[(10, 2, 22, 4, 45.6, 56, 80, 92)];
+// //? The way to do
+// //? if positive (true) jump (sort) else don't => 92 > 56 = switch
+// ratings.sort(function (a, b) {
+//   return a - b;
+// });
+// console.log(ratings); // Array(8) [ 2, 4, 10, 22, 45.6, 56, 80, 92 ]
+// //* In ARROW FUNCTION
+// //* remove function, {}, return and add =>
+// ratings.sort((a, b) => a - b);
+
+// games.sort((a, b) => b.rating - a.rating);
+// console.log(games);
+
+//! SPREAD OPERATOR
+// const ratings = [92, 56, 4, 2, 22, 45.6, 10, 80];
+// const descRating = [...ratings]; //* Make a copy of the array
+// descRating.sort((a, b) => b - a);
+// console.log(descRating); // Array(8) [ 92, 80, 56, 45.6, 22, 10, 4, 2 ]
+// console.log(ratings); // Array(8) [ 92, 56, 4, 2, 22, 45.6, 10, 80 ] //* As not been modified
+
+// const name = "AndreRoy";
+// const letters = [...name]; // Make an array with the string
+// console.log(letters); // Array(8) [ "A", "n", "d", "r", "e", "R", "o", "y" ]
+
+// const names = ["Ed", "Andre"];
+// const otherNames = ["Jon", "Bon", "Jovi"];
+// const allNames = [...names, ...otherNames];
+// console.log(names); //* Didn't changed
+// console.log(otherNames); //* Didn't changed
+// console.log(allNames); // Array(5) [ "Ed", "Andre", "Jon", "Bon", "Jovi" ] //* Concat with spread operator
