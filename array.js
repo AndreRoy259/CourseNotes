@@ -21,17 +21,17 @@
 //? Names will have Me in it, 'cause newNames is a reference to names
 
 //! HIGH ORDER FUNCTION - A function that takes another function as a parameter
-const videos = [
-  "Pranking",
-  "How to JavaScript",
-  "HTML Tutorial",
-  "learning piano",
-  "HTML Basics",
-  "css",
-  "java",
-  "programming",
-  "ui/ux",
-];
+// const videos = [
+//   "Pranking",
+//   "How to JavaScript",
+//   "HTML Tutorial",
+//   "learning piano",
+//   "HTML Basics",
+//   "css",
+//   "java",
+//   "programming",
+//   "ui/ux",
+// ];
 
 //* FOREACH - Loop through the array
 // videos.forEach(function (video) {
